@@ -28,3 +28,15 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore Java compiled output folder
+out/
+*.class
+
+# Ignore IntelliJ configuration files
+.idea/
+*.iml
+
+# Ignore Python cache
+pycache/
+.venv/
