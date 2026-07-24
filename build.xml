@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Airport" default="build" basedir=".">
+    <description>Airport Project - Java Practice Hub Build</description>
+    
+    <!-- Set properties -->
+    <property name="src" location="jets/src"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+    <property name="classes" location="${build}/classes"/>
+    
+    <!-- Initialize -->
+    <target name="init">
+        <mkdir dir="${classes}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+    
+    <!-- Compile Java source files -->
+    <target name="build" depends="init" description="Compile all Java source files">
+        <javac srcdir="${src}" destdir="${classes}" includeantruntime="false" debug="true">
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>
+    </target>
+    
+    <!-- Clean build artifacts -->
+    <target name="clean" description="Clean build and dist directories">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+    
+    <!-- Rebuild -->
+    <target name="rebuild" depends="clean,build" description="Clean and rebuild"/>
+    
+</project>
