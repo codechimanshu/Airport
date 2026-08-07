@@ -3,8 +3,11 @@
     <description>Airport Project - Java Practice Hub Build</description>
     
     <!-- Set properties -->
-    <!-- Updated src location to a common Java source directory 'src'. Adjust if your sources live elsewhere (e.g., 'src/main/java'). -->
-    <property name="src" location="src"/>
+    <!-- Prefer jets/src if it exists (some workflows expect that layout); fall back to src otherwise. -->
+    <condition property="src" value="jets/src" else="src">
+        <available file="jets/src" type="dir"/>
+    </condition>
+
     <property name="build" location="build"/>
     <property name="dist" location="dist"/>
     <property name="classes" location="${build}/classes"/>
