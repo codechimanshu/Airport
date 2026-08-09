@@ -12,20 +12,33 @@
     <property name="dist" location="dist"/>
     <property name="classes" location="${build}/classes"/>
     
+    <!-- Detect if there are any Java source files to compile -->
+    <condition property="has.sources">
+        <resourcecount when="greater" count="0">
+            <fileset dir="${src}" includes="**/*.java"/>
+        </resourcecount>
+    </condition>
+
     <!-- Initialize -->
     <target name="init">
         <mkdir dir="${classes}"/>
         <mkdir dir="${dist}"/>
-        <!-- Ensure the source directory exists so javac doesn't fail when there are no sources -->
-        <mkdir dir="${src}"/>
     </target>
     
-    <!-- Compile Java source files -->
-    <target name="build" depends="init" description="Compile all Java source files">
+    <!-- Compile Java source files only when present -->
+    <target name="compile" depends="init" if="has.sources" description="Compile Java source files">
         <javac srcdir="${src}" destdir="${classes}" includeantruntime="false" debug="true">
             <compilerarg value="-Xlint:unchecked"/>
         </javac>
     </target>
+
+    <!-- Informative target when there are no sources -->
+    <target name="no-sources" unless="has.sources">
+        <echo message="No Java source files found in ${src}; skipping compilation."/>
+    </target>
+
+    <!-- Top-level build: either compile (if sources exist) or run no-sources -->
+    <target name="build" depends="compile,no-sources" description="Top-level build"/>
     
     <!-- Clean build artifacts -->
     <target name="clean" description="Clean build and dist directories">
