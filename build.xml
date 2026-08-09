@@ -16,6 +16,8 @@
     <target name="init">
         <mkdir dir="${classes}"/>
         <mkdir dir="${dist}"/>
+        <!-- Ensure the source directory exists so javac doesn't fail when there are no sources -->
+        <mkdir dir="${src}"/>
     </target>
     
     <!-- Compile Java source files -->
