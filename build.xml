@@ -13,10 +13,22 @@
     <property name="classes" location="${build}/classes"/>
     
     <!-- Detect if there are any Java source files to compile -->
+    <!-- Guard resourcecount with availability checks so Ant won't fail when directories are absent -->
     <condition property="has.sources">
-        <resourcecount when="greater" count="0">
-            <fileset dir="${src}" includes="**/*.java"/>
-        </resourcecount>
+        <or>
+            <and>
+                <available file="jets/src" type="dir"/>
+                <resourcecount when="greater" count="0">
+                    <fileset dir="jets/src" includes="**/*.java"/>
+                </resourcecount>
+            </and>
+            <and>
+                <available file="src" type="dir"/>
+                <resourcecount when="greater" count="0">
+                    <fileset dir="src" includes="**/*.java"/>
+                </resourcecount>
+            </and>
+        </or>
     </condition>
 
     <!-- Initialize -->
