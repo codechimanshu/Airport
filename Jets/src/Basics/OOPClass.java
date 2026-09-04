@@ -1,13 +1,13 @@
 package Basics;
 
-class Employee{
+    class Employee{
     int id;
     String name;
     int salary;
     public void printDetails(){
         System.out.println("Employee details:");
-        System.out.println("Id: " + id);
         System.out.println("Name: " + name);
+        System.out.println("Id: " + id);
     }
     public void getsalary(){
         System.out.println("Salary :"+salary);
