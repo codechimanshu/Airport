@@ -17,7 +17,7 @@ public class CarClass {
         Car Toyota = new Car();
         Toyota.Brand = "Toyota";
         Toyota.color = "Red";
-        Toyota.price = 100; 
+        Toyota.price = 100;
         Toyota.printdetails();
     }
 }
