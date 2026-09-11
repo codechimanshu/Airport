@@ -1,8 +1,13 @@
 package Basics;
 
 class Cylinder {
-    int radius;
-    int height;
+    private int radius;
+    private int height;
+
+    public Cylinder(int radius, int height) {
+        this.radius = radius;
+        this.height = height;
+    }
 
     public int getRadius() {
         return radius;
@@ -27,9 +32,9 @@ class Cylinder {
 
 public class CylinderConstructor {
     public static void main(String[] args) {
-        Cylinder C1 = new Cylinder();
-        C1.setRadius(10);
-        C1.setHeight(20);
+        Cylinder C1 = new Cylinder(10,12);
+//        C1.setRadius(10);
+//        C1.setHeight(20);
         System.out.println(C1.CylinderSA(10,20));
         System.out.println(C1.CylinderV(13,28));
 
