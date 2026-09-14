@@ -15,9 +15,17 @@ class EkClass{
     }
 }
 
+class DoClass extends EkClass{
+    DoClass(int y) {
+        super(y);
+        System.out.println("Mai ek constructor hu");
+    }
+}
+
 public class ThisSuperKeyword {
     public static void main(String[] args) {
         EkClass e =new EkClass(87);
+        DoClass d=new DoClass(8);
         System.out.println(e.getX());
     }
 }
