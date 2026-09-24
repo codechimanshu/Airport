@@ -8,6 +8,7 @@ class EkClass{
     }
 
     EkClass(int x){
+        System.out.println("EkClass getX: "+x);
         this.x = x;
     }
     public int returnone(){
@@ -25,7 +26,7 @@ class DoClass extends EkClass{
 public class ThisSuperKeyword {
     public static void main(String[] args) {
         EkClass e =new EkClass(87);
-        DoClass d=new DoClass(8);
+        DoClass d=new DoClass(67);
         System.out.println(e.getX());
     }
 }
