@@ -26,7 +26,7 @@ class Human extends Monkey implements BasicAnimal{
 public class ClassMonkey {
     static void main() {
         Human h = new Human();
-        h.Eat();
+//        h.Eat();
         h.Sleep();
         h.Jump();
         h.Bite();
