@@ -26,9 +26,12 @@ class Human extends Monkey implements BasicAnimal{
 public class ClassMonkey {
     static void main() {
         Human h = new Human();
+        Monkey m = new Human();
 //        h.Eat();
         h.Sleep();
         h.Jump();
         h.Bite();
+        System.out.println("show Polymorphism using Monkey class");
+        m.Bite();
     }
 }
