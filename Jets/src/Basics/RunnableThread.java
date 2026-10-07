@@ -27,6 +27,7 @@ public class RunnableThread {
         MythreadRunnable2 bullet2 = new MythreadRunnable2();
         Thread gun2  = new Thread(bullet2);
 
+
         gun1.start();
         gun2.start();
     }
