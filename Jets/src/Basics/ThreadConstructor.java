@@ -1,4 +1,5 @@
 package Basics;
+
 class Mythr extends Thread{
     public Mythr(String name){
         super(name);
