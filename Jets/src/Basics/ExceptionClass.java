@@ -11,14 +11,25 @@ class MyException extends Exception {
     }
 }
 
+class MaxAgeException extends Exception {
+    public String toString(){
+        return "Age cannot be the greater than 125";
+    }
+    public String getmessage(){
+        return "Make sure that the value of age entered is correct";
+    }
+}
+
 public class ExceptionClass {
     static void main() {
         Scanner sc = new Scanner(System.in);
         int a ;
+        System.out.println("Enter an integer");
         a=sc.nextInt();
         if (a<9){
             try {
 //                throw new MyException();
+//                throw new MaxAgeException();
                 throw new ArithmeticException("This is an exception");
             }
             catch(Exception e){
