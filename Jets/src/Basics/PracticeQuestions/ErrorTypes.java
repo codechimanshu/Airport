@@ -3,7 +3,7 @@ package Basics.PracticeQuestions;
 public class ErrorTypes {
     static void main() {
         //Syntax Error
-    int a= 6000
+//    int a= 6000
 
         //Logical Error
         int age=44;
