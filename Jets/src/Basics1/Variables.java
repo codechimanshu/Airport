@@ -10,7 +10,8 @@ public class Variables {
         z = x+y;      //Initialization
         System.out.println(z);
         System.out.println(x*y);
-        System.out.println(y*2);
+        y=y*2;
+        System.out.println(y);
 
         int a;
         a = 5;
